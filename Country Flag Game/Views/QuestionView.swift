@@ -28,7 +28,7 @@ struct QuestionView: View {
                         .frame(width: 300, height: 200)
                     ForEach(gameManager.answerChoices) { answer in
                         AnswerRow(answer: answer)
-                            .environment(gameManager)
+                            .environmentObject(gameManager)
                     }
                 })
                 Button {
