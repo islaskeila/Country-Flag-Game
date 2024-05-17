@@ -19,7 +19,8 @@ struct AnswerRow: View {
                 .font(.title)
             if isSelected {
                 Spacer()
-                Image(systemName: answer.isCorrect ? .green : .red)
+                Image(systemName: answer.isCorrect ? "checkmark.circle.fill" : "x.circle.fill")
+                    .foregroundColor(answer.isCorrect ? .green : .red)
             }
         })
         .padding()
@@ -37,5 +38,5 @@ struct AnswerRow: View {
 }
 
 #Preview {
-    AnswerRow(answer: Answer(text: "Test", isCorrect: tue))
+    AnswerRow(answer: Answer(text: "Test", isCorrect: true))
 }
